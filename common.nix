@@ -101,11 +101,12 @@
 # --- SCORCIATOIE DA TERMINALE (ALIAS) ---
   environment.shellAliases = {
     # Per aggiornare i sistemi senza ricordare il comando lungo
-    nixos-save-fisso = "sudo nixos-rebuild switch --flake ~/.config/nixos#fisso";
-    nixso-save-portatile = "sudo nixos-rebuild switch --flake ~/.config/nixos#portatile";
+    aggiorna-fisso = "sudo nixos-rebuild switch --flake ~/.config/nixos#fisso";
+    aggirna-portatile = "sudo nixos-rebuild switch --flake ~/.config/nixos#portatile";
     
     # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
-    nixos-cloud-push = "cd ~/.config/nixos && git add . && git commit -m 'Salvataggio automatico' && git push";
+    scarica = "cd ~/.config/nixos && git add . && git commit -m 'Salvataggio automatico' && git push";
+    carica = "cd ~/.config/nixos && git pull";
     
   };
 
