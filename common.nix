@@ -98,6 +98,15 @@
     options = "--delete-older-than 7d";
   };
 
+# --- SCORCIATOIE DA TERMINALE (ALIAS) ---
+  environment.shellAliases = {
+    # Per aggiornare i sistemi senza ricordare il comando lungo
+    aggiorna-fisso = "sudo nixos-rebuild switch --flake ~/.dotfiles#fisso";
+    aggiorna-portatile = "sudo nixos-rebuild switch --flake ~/.dotfiles#portatile";
+    
+    # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
+    nix-save = "cd ~/.dotfiles && git add . && git commit -m 'Salvataggio automatico' && git push";
+  };
 
   # ==========================================
   #   PACCHETTI SOFTWARE GLOBALI
