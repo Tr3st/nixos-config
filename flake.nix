@@ -8,16 +8,17 @@
 
   outputs = { self, nixpkgs, ... }: {
     nixosConfigurations = {
-      
-      # Questo è il profilo per il tuo PC fisso
+      # Profilo per il PC Fisso (questo ce l'hai già)
       fisso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          # Diciamo al Flake di leggere i file che abbiamo appena copiato
-          ./pc-fisso/configuration.nix
-        ];
+        modules = [ ./pc-fisso/configuration.nix ];
       };
 
+      # NUOVO Profilo per il Portatile (Aggiungi questo!)
+      portatile = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./portatile/configuration.nix ];
+      };
     };
   };
 }
