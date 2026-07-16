@@ -125,6 +125,8 @@
     swaybg                 # Gestione degli sfondi
     wofi                      # Rierctore delle applicazioni
     waybar                    # Barra delle applicazioni
+    tmux
+    starship
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
