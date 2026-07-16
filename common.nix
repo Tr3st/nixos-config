@@ -122,7 +122,7 @@
     # --- AMBIENTE TILING (Wayland/Hyprland) ---
     kitty                     # Emulatore di terminale super veloce
     wl-clipboard              # Gestione del copia/incolla su Wayland
-    hyprpaper                 # Gestione degli sfondi
+    swaybg                 # Gestione degli sfondi
     wofi                      # Rierctore delle applicazioni
     waybar                    # Barra delle applicazioni
 
