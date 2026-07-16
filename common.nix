@@ -122,7 +122,9 @@
     # --- AMBIENTE TILING (Wayland/Hyprland) ---
     kitty                     # Emulatore di terminale super veloce
     wl-clipboard              # Gestione del copia/incolla su Wayland
-    
+    hyprpaper                 # Gestione degli sfondi
+    wofi
+
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
     git                       # Controllo di versione per il codice
