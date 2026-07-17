@@ -8,16 +8,16 @@
 
   outputs = { self, nixpkgs, ... }: {
     nixosConfigurations = {
-      # Profilo per il PC Fisso (questo ce l'hai già)
+      # Profilo per il PC Fisso
       fisso = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./pc-fisso/configuration.nix ];
+        modules = [ ./desktop/configuration.nix ];
       };
 
-      # NUOVO Profilo per il Portatile (Aggiungi questo!)
+      # NUOVO Profilo per il Portatile 
       portatile = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./portatile/configuration.nix ];
+        modules = [ ./laptop/configuration.nix ];
       };
     };
   };
