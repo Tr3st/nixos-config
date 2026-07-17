@@ -141,7 +141,8 @@
     unzip                     # Per estrarre gli archivi .zip
     ripgrep                   # Motore di ricerca testo super veloce (sostituto di grep)
     fd                        # Sostituto moderno e veloce per trovare i file
-    
+    brightnessctl             # Per regolare la luminosità dello schermo
+
     # --- ESTENSIONI GNOME ---
     gnomeExtensions.forge     # Aggiunge il Tiling a GNOME
     gnome-extension-manager   # App per gestire le estensioni
