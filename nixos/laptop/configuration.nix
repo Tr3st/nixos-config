@@ -14,6 +14,10 @@
   # --- BOOTLOADER ---
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  
+  environment.shellAliases = {
+    apply = "sudo nixxos-rebuild switch --flake ~/.dotfiles/nixos#laptop";
+  };
 
   # --- IDENTITÀ HARDWARE ---
   networking.hostName = "portatile-nixos";

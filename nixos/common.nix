@@ -100,10 +100,6 @@
 
 # --- SCORCIATOIE DA TERMINALE (ALIAS) ---
   environment.shellAliases = {
-    # Per aggiornare i sistemi senza ricordare il comando lungo
-    aggiorna-desktop = "sudo nixos-rebuild switch --flake ~/.dotfiles/nixos#desktop";
-    aggiorna-laptop = "sudo nixos-rebuild switch --flake ~/.dotfiles/nixos#laptop";
-    
     # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
     carica = "(cd ~/.dotfiles && git add . ; git commit -m 'Salvataggio automatico' ; git push)";
     scarica = "(cd ~/.dotfiles && git pull)";

@@ -15,6 +15,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # --- SCORCIATOIE DA TERMINALE (ALIAS) ---
+  environment.shellAliases = {
+    apply = "sudo nixos-rebuild switch --flake ~/.dotfiles/nixos#desktop";
+  };
+
+
   # --- IDENTITÀ HARDWARE DI QUESTO PC ---
   networking.hostName = "fisso-nixos";
 
