@@ -1,0 +1,50 @@
+/* Importa i colori dal tema attuale (Tramite il ponte) */
+@import url("../themes/current/wofi.css");
+
+window {
+    margin: 0px;
+    border: 2px solid @accent;
+    background-color: @bg;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#input {
+    margin: 15px;
+    border: none;
+    color: @fg;
+    background-color: @bg-hover;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: @bg;
+    color: @fg;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: @bg;
+}
+
+#text {
+    margin: 5px;
+    color: @fg;
+}
+
+/* Quando selezioni un programma con le frecce */
+#entry:selected {
+    background-color: @accent;
+    border-radius: 8px;
+}
+
+/* Colore del testo quando è selezionato */
+#entry:selected #text {
+    color: @bg;
+    font-weight: bold;
+}

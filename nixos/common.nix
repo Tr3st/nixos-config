@@ -118,11 +118,12 @@
     # --- AMBIENTE TILING (Wayland/Hyprland) ---
     kitty                     # Emulatore di terminale super veloce
     wl-clipboard              # Gestione del copia/incolla su Wayland
-    swaybg                 # Gestione degli sfondi
+    swaybg                    # Gestione degli sfondi
     wofi                      # Rierctore delle applicazioni
     waybar                    # Barra delle applicazioni
     tmux
     starship
+    papirus-icon-theme        # Utile per le icone (es wofi)
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale

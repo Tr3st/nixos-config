@@ -16,7 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   
   environment.shellAliases = {
-    apply = "sudo nixxos-rebuild switch --flake ~/.dotfiles/nixos#laptop";
+    apply = "sudo nixos-rebuild switch --flake ~/.dotfiles/nixos#laptop";
   };
 
   # --- IDENTITÀ HARDWARE ---

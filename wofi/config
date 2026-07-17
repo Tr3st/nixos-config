@@ -1,0 +1,13 @@
+# Impostazioni Base
+show=drun
+prompt=Cerca App...
+width=500
+height=400
+location=center
+
+# Comportamento
+always_parse_args=true
+allow_markup=true
+allow_images=true       # Questo comando ATTIVA le icone!
+image_size=24           # Dimensione delle icone
+hide_scroll=true        # Nasconde la brutta barra di scorrimento laterale
