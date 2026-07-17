@@ -105,8 +105,8 @@
     aggiorna-portatile = "sudo nixos-rebuild switch --flake ~/.config/nixos#portatile";
     
     # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
-    carica = "cd ~/.config/nixos && git add . ; git commit -m 'Salvataggio automatico' ; git push";
-    scarica = "cd ~/.config/nixos && git pull";
+    carica = "(cd ~/.config/nixos && git add . ; git commit -m 'Salvataggio automatico' ; git push)";
+    scarica = "(cd ~/.config/nixos && git pull)";
     
   };
 
