@@ -105,8 +105,8 @@
     aggiorna-laptop = "sudo nixos-rebuild switch --flake ~/.dotfiles/nixos#laptop";
     
     # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
-    carica = "(cd ~/.dotfiles/nixos && git add . ; git commit -m 'Salvataggio automatico' ; git push)";
-    scarica = "(cd ~/.dotfiles/nixos && git pull)";
+    carica = "(cd ~/.dotfiles && git add . ; git commit -m 'Salvataggio automatico' ; git push)";
+    scarica = "(cd ~/.dotfiles && git pull)";
     
   };
 
