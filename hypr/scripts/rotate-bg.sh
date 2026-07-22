@@ -28,7 +28,7 @@ while true; do
     RANDOM_IMG="${IMAGES[RANDOM % ${#IMAGES[@]}]}"
 
     # Usa swww per cambiare sfondo con transizione
-    swww img "$RANDOM_IMG" \
+    awww img "$RANDOM_IMG" \
         --transition-type simple \
         --transition-step 90 \
         --transition-fps 60 \

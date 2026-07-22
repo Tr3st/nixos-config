@@ -118,7 +118,7 @@
     # --- AMBIENTE TILING (Wayland/Hyprland) ---
     kitty                     # Emulatore di terminale super veloce
     wl-clipboard              # Gestione del copia/incolla su Wayland
-    swww                      # Gestione degli sfondi
+    awww                      # Gestione degli sfondi
     wofi                      # Rierctore delle applicazioni
     waybar                    # Barra delle applicazioni
     tmux
