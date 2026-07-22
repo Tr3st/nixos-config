@@ -114,7 +114,7 @@
     # --- INTERNET E COMUNICAZIONE ---
     google-chrome             # Browser web
     discord                   # Chat e chiamate vocali
-    whatsapp
+    #whatsapp
 
     # --- AMBIENTE TILING (Wayland/Hyprland) ---
     kitty                     # Emulatore di terminale super veloce
