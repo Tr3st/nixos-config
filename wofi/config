@@ -1,13 +1,22 @@
-# Impostazioni Base
+# ==========================================
+# WOFI - CONFIGURAZIONE PRO
+# ==========================================
+
+# -- Aspetto Generale --
 show=drun
-prompt=Cerca App...
+prompt=Cerca applicazione...
 width=500
-height=400
+height=450
 location=center
 
-# Comportamento
+# -- Comportamento e Ricerca (Il tocco da Pro) --
+insensitive=true        # Ignora le maiuscole/minuscole ("fire" troverà "Firefox")
+allow_images=true       # Abilita le icone GTK
+image_size=30           # Grandezza icone bilanciata
+hide_scroll=true        # Uccide la barra di scorrimento laterale (esteticamente orribile)
+no_actions=true         # Rimuove le doppie opzioni inutili per alcune app
+
+# -- Integrazione Sistema --
+term=kitty              # Dice a Wofi di usare Kitty se deve lanciare app da terminale
 always_parse_args=true
 allow_markup=true
-allow_images=true       # Questo comando ATTIVA le icone!
-image_size=24           # Dimensione delle icone
-hide_scroll=true        # Nasconde la brutta barra di scorrimento laterale
