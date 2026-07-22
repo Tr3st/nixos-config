@@ -1,0 +1,61 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "spacing": 4,
+    "margin-top": 4,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["backlight", "pulseaudio", "network", "battery", "tray", "custom/power"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": { "active": "", "default": "" }
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A %d %B}"
+    },
+
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip-format": "Luminosità: {percent}%",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "tooltip-format": "Audio: {volume}%",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-disconnected": "⚠",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)"
+    },
+
+    "battery": {
+        "format": "{icon}",
+        "format-charging": "",
+        "tooltip-format": "Batteria: {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "tray": { "spacing": 6 },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "systemctl poweroff",
+        "on-click-right": "systemctl reboot",
+        "tooltip": false
+    }
+}

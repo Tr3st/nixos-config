@@ -114,7 +114,8 @@
     # --- INTERNET E COMUNICAZIONE ---
     google-chrome             # Browser web
     discord                   # Chat e chiamate vocali
-    
+    whatsapp
+
     # --- AMBIENTE TILING (Wayland/Hyprland) ---
     kitty                     # Emulatore di terminale super veloce
     wl-clipboard              # Gestione del copia/incolla su Wayland

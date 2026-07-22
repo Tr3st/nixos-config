@@ -142,7 +142,7 @@
 
     "custom/power": {
         "format": "",
-        "on-click": "wlogout -b 2 -c 0 -r 0 -m 400",
+        "on-click": "~/.dotfiles/hypr/scripts/power.sh",
         "tooltip": false
     }
 }
