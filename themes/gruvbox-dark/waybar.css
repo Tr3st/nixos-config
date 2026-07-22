@@ -49,6 +49,7 @@ tooltip label {
 #memory,
 #pulseaudio,
 #network,
+#backlight,
 #battery,
 #tray,
 #custom-launcher,
@@ -152,3 +153,6 @@ tooltip label {
         color: @red;
     }
 }
+
+#backlight:hover { border-color: @fg-alt; }
+#backlight { color: @aqua; }
