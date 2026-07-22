@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-# Definisci le opzioni del menù
-opzioni="⏻ Spegni\n Riavvia\n Esci (Log Out)"
+# Le 4 opzioni essenziali
+opzioni="⏻  Spegni\n  Riavvia\n⏾  Standby\n  Logout"
 
-# Apri Wofi in modalità menù testuale
-scelta=$(echo -e "$opzioni" | wofi --dmenu --cache-file /dev/null --width 300 --height 220 --prompt "Sistema:")
+# Wofi configurato come un dropdown menu in alto a destra
+scelta=$(echo -e "$opzioni" | wofi --dmenu --cache-file /dev/null --width 200 --height 210 --prompt "Sistema" --location top_right --xoffset -10 --yoffset 45)
 
-# Esegui l'azione in base a cosa hai cliccato o premuto con Invio
 case $scelta in
-"⏻ Spegni") systemctl poweroff ;;
-" Riavvia") systemctl reboot ;;
-" Esci (Log Out)") hyprctl dispatch exit ;;
+"⏻  Spegni") systemctl poweroff ;;
+"  Riavvia") systemctl reboot ;;
+"⏾  Standby") systemctl suspend ;;
+"  Logout") hyprctl dispatch exit ;;
 esac
