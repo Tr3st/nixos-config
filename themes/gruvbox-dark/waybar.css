@@ -1,4 +1,5 @@
-@define-color bg       rgba(40, 40, 40, 0.85); /* Sfondo Gruvbox semitrasparente */
+@define-color bg       rgba(40, 40, 40, 0.90);
+@define-color bg-hover rgba(60, 56, 54, 0.95);
 @define-color fg       #ebdbb2;
 @define-color fg-dim   #a89984;
 @define-color red      #cc241d;
@@ -8,7 +9,7 @@
 
 * {
     font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", monospace;
-    font-size: 13px; /* Perfetto sia per laptop che PC */
+    font-size: 14.5px; /* Ingrandito per leggibilità icone e testo */
     font-weight: bold;
     border: none;
     box-shadow: none;
@@ -20,33 +21,34 @@ window#waybar {
     color: @fg;
 }
 
-/* Moduli base (senza sfondo, solo testo colorato) */
-#workspaces, #clock, #cpu, #memory, #backlight, #pulseaudio, #network, #battery, #tray, #custom-power {
+/* Moduli base */
+#workspaces, #clock, #battery, #tray, #custom-power, #custom-sys-toggle {
+    padding: 0 12px;
+    background: transparent;
+}
+
+/* Styling del Cassetto (Drawer) */
+#pulseaudio, #backlight, #network {
     padding: 0 10px;
     background: transparent;
 }
 
-/* Workspaces minimalisti */
-#workspaces button {
-    color: @fg-dim;
-    padding: 0 4px;
-    transition: color 0.2s;
-}
-#workspaces button.active { color: @fg; }
-#workspaces button:hover { color: @yellow; }
+/* Colori Iconici */
+#workspaces button { color: @fg-dim; padding: 0 4px; transition: color 0.2s; }
+#workspaces button.active { color: @yellow; }
+#workspaces button:hover { color: @fg; }
 
-/* Colori Iconici Gruvbox Fluttuanti */
 #clock { color: @fg; }
-#cpu { color: @aqua; }
-#memory { color: @yellow; }
-#pulseaudio { color: @green; }
+#custom-sys-toggle { color: @fg-dim; font-size: 16px; } /* Icona ingranaggio più grande */
+
+#pulseaudio { color: @aqua; }
 #backlight { color: @yellow; }
-#network { color: @aqua; }
+#network { color: @fg-dim; }
 
 #battery { color: @green; }
 #battery.charging { color: @yellow; }
 #battery.critical:not(.charging) { color: @red; animation: blink 1s linear infinite; }
 
-#custom-power { color: @red; font-size: 15px; }
+#custom-power { color: @red; font-size: 17px; } /* Tasto spegnimento ben visibile */
 
 @keyframes blink { 50% { opacity: 0.3; } }
