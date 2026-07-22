@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Tempo di attesa tra un cambio e l'altro (es. 600 = 10 minuti)
-INTERVAL=600
+INTERVAL=300
 
 while true; do
     # Definisci i due percorsi ad ogni ciclo, così si aggiornano dinamicamente
