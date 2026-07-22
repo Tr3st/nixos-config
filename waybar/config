@@ -1,0 +1,140 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 40,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "network",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    "custom/launcher": {
+        "format": "",
+        "on-click": "pkill wofi || wofi --show drun --allow-images --image-size=24 --no-actions --style ~/.config/wofi/style.css",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "urgent": "",
+            "empty": ""
+        },
+        "persistent-workspaces": {
+            "*": 4
+        }
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 40,
+        "rewrite": {
+            "(.*) - Mozilla Firefox": "󰈹 $1",
+            "(.*) - kitty": " $1"
+        }
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": " {:%A, %d %B %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ebdbb2'><b>{}</b></span>",
+                "days":       "<span color='#a89984'><b>{}</b></span>",
+                "weeks":      "<span color='#83a598'><b>W{}</b></span>",
+                "weekdays":   "<span color='#d79921'><b>{}</b></span>",
+                "today":      "<span color='#cc241d'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "󰈀 LAN",
+        "format-disconnected": "⚠ Disconnesso",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} 󰈀",
+        "on-click": "nm-connection-editor"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout -b 2 -c 0 -r 0 -m 400",
+        "tooltip": false
+    }
+}

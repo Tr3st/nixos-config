@@ -124,6 +124,7 @@
     tmux
     starship
     papirus-icon-theme        # Utile per le icone (es wofi)
+    wlogout                   # Menu per spengere, riavviare o sospendere il PC
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
