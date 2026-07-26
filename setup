@@ -1,0 +1,13 @@
+#WAYBAR
+ln -rf ~/.dotfiles/waybar/config ~/.config/waybar/config
+ln -rf ~/.dotfiles/themes/current/waybar.css ~/.config/waybar/style.css
+
+#WOFI
+ln -rf ~/.dotfiles/wofi/config ~/.config/wofi/config
+ln -rf ~/.dotfiles/themes/current/wofi.css ~/.config/wofi/style.css
+
+#KITTY
+ln -rf ~/.dotfiles/themes/current/kitty.conf ~/.config/kitty/kitty.conf
+
+#HYPRlAND
+
