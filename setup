@@ -11,3 +11,6 @@ ln -rf ~/.dotfiles/themes/current/kitty.conf ~/.config/kitty/kitty.conf
 
 #AGS
 ln ~/.dotfiles/ags/config.js ~/.config/ags/app.js
+
+#LAZYVIM
+ln -sf ~/.dotfiles/themes/current/lazyvim.lua ~/.config/nvim/lua/plugins/theme.lua
