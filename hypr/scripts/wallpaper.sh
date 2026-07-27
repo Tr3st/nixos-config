@@ -23,7 +23,7 @@ while true; do
     fi
 
     # Seleziona un'immagine a caso dalla cartella scelta
-    SFONDO=$(find "$TARGET_DIR" -type f \( -name "*.jpg" -o -name "*.png" \) | shuf -n 1)
+    SFONDO=$(find "$TARGET_DIR" -type f \( -name "*.jpg" -o -name "*.png" \) | shuf --random-source=/dev/urandom -n 1)
 
     # Verifica di aver trovato effettivamente un'immagine prima di lanciare il comando
     if [ -n "$SFONDO" ]; then

@@ -79,9 +79,16 @@ fonts = {
   # Hyprland (Wayland Tiling Window Manager principale)
   programs.hyprland.enable = true;
 
+  # Spegniamo il blindato GDM
+  services.xserver.displayManager.gdm.enable = false;
+
+  # Accendiamo il flessibile SDDM
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
   # GNOME (Interfaccia classica / Piano di riserva)
   services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
+  #services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = with pkgs; [ gnome-console gnome-terminal ];
 
@@ -137,7 +144,9 @@ fonts = {
     papirus-icon-theme        # Utile per le icone (es wofi)
     pavucontrol               # Gestore visivo per Audio
     networkmanagerapplet      # Gestore visivo per Rete
-    ags
+    ags                       # Per vari widget etc...
+    sddm-sugar-dark           # Per interfaccia di login
+
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
@@ -164,4 +173,6 @@ fonts = {
     gnomeExtensions.forge     # Aggiunge il Tiling a GNOME
     gnome-extension-manager   # App per gestire le estensioni
   ];
+
+  services.displayManager.sddm.theme = "sugar-dark";
 }
