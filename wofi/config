@@ -5,8 +5,8 @@
 # -- Aspetto Generale --
 show=drun
 prompt=Cerca applicazione...
-width=500
-height=450
+width=400
+height=350
 location=center
 
 # -- Comportamento e Ricerca (Il tocco da Pro) --

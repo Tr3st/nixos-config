@@ -44,7 +44,10 @@
   # Permette di installare software proprietario (es. Chrome, Discord)
   nixpkgs.config.allowUnfree = true;
 
-
+  # Abilita il portachiavi per salvare le password di Chrome/App
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true; # Interfaccia grafica opzionale per gestire le chiavi
+  
   # ==========================================
   #   RETE, STAMPANTI E AUDIO
   # ==========================================
@@ -146,6 +149,7 @@
     ripgrep                   # Motore di ricerca testo super veloce (sostituto di grep)
     fd                        # Sostituto moderno e veloce per trovare i file
     brightnessctl             # Per regolare la luminosità dello schermo
+    neofetch                  # Per vedere informazioni sul pc
 
     # --- ESTENSIONI GNOME ---
     gnomeExtensions.forge     # Aggiunge il Tiling a GNOME

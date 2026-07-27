@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-# Le 4 opzioni essenziali
-opzioni="⏻  Spegni\n  Riavvia\n⏾  Standby\n  Logout"
+# Definisci le opzioni (senza icone strane che potrebbero rompere Wofi)
+opzioni="Spegni\nRiavvia\nStandby\nLogout"
 
-# Wofi configurato come un dropdown menu in alto a destra
-scelta=$(echo -e "$opzioni" | wofi --dmenu --cache-file /dev/null --width 200 --height 210 --prompt "Sistema" --location top_right --xoffset -10 --yoffset 45)
+# Apri il dropdown nell'angolo in alto a destra
+scelta=$(echo -e "$opzioni" | wofi --dmenu --cache-file /dev/null --width 200 --height 210 --prompt "Sistema" --location top_right --xoffset -15 --yoffset 60)
 
 case $scelta in
-"⏻  Spegni") systemctl poweroff ;;
-"  Riavvia") systemctl reboot ;;
-"⏾  Standby") systemctl suspend ;;
-"  Logout") hyprctl dispatch exit ;;
+"Spegni") systemctl poweroff ;;
+"Riavvia") systemctl reboot ;;
+"Standby") systemctl suspend ;;
+"Logout") hyprctl dispatch exit ;;
 esac
