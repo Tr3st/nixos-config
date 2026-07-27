@@ -9,5 +9,5 @@ ln -rf ~/.dotfiles/themes/current/wofi.css ~/.config/wofi/style.css
 #KITTY
 ln -rf ~/.dotfiles/themes/current/kitty.conf ~/.config/kitty/kitty.conf
 
-#HYPRlAND
-
+#AGS
+ln ~/.dotfiles/ags/config.js ~/.config/ags/app.js

@@ -31,6 +31,14 @@
   };
   console.keyMap = "it2";
 
+fonts = {
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "Hack Nerd Font" ];
+      };
+    };
+  };
 
   # ==========================================
   #   UTENTI E PERMESSI
@@ -124,12 +132,12 @@
     wl-clipboard              # Gestione del copia/incolla su Wayland
     awww                      # Gestione degli sfondi
     wofi                      # Rierctore delle applicazioni
-    waybar                    # Barra delle applicazioni
     tmux
     starship
     papirus-icon-theme        # Utile per le icone (es wofi)
     pavucontrol               # Gestore visivo per Audio
     networkmanagerapplet      # Gestore visivo per Rete
+    ags
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
@@ -149,7 +157,8 @@
     ripgrep                   # Motore di ricerca testo super veloce (sostituto di grep)
     fd                        # Sostituto moderno e veloce per trovare i file
     brightnessctl             # Per regolare la luminosità dello schermo
-    neofetch                  # Per vedere informazioni sul pc
+    hyfetch                  # Per vedere informazioni sul pc
+    grim
 
     # --- ESTENSIONI GNOME ---
     gnomeExtensions.forge     # Aggiunge il Tiling a GNOME
