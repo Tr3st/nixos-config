@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-THEMES_DIR="$HOME/.dotfiles/themes"
+PALETTE_DIR="$HOME/.dotfiles/themes/palette"
 
-# Trova tutte le cartelle dei temi disponibili
-selected_theme=$(find "$THEMES_DIR" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | wofi --dmenu --prompt "Seleziona Tema:")
+selected_theme=$(find "$PALETTE_DIR" -mindepth 1 -maxdepth 1 -type d -exec test -f "{}/colors.json" \; -print |
+    xargs -n1 basename | wofi --dmenu --prompt "Seleziona Tema:")
 
 if [ -n "$selected_theme" ]; then
-    # Lancia lo script che applica il tema scelto
-    "./apply-theme.sh" "$selected_theme"
+    "$HOME/.dotfiles/themes/scripts/apply-theme.sh" "$selected_theme"
 fi

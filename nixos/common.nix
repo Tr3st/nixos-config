@@ -150,7 +150,7 @@ fonts = {
     git                       # Controllo di versione per il codice
     nodejs                    # Runtime JavaScript (spesso richiesto da plugin Neovim)
     tree-sitter               # Parser per evidenziare la sintassi su Neovim
-    
+    jq
     # --- LINGUAGGIO C/C++ ---
     gcc                       # Compilatore standard GNU
     clang-tools               # Strumenti di analisi del codice (LSP)
