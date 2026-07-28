@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
   };
 
-  outputs = { self, nixpkgs, silentSDDM, ... }@inputs: {
+  outputs = { self, nixpkgs, ... }: {
     nixosConfigurations = {
 
       # Profilo per il PC Fisso
