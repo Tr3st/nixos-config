@@ -165,7 +165,7 @@ fonts = {
     brightnessctl             # Per regolare la luminosità dello schermo
     hyfetch                  # Per vedere informazioni sul pc
     grim
-    tree-sitter
+    tree
   ];
 
 # Configuriamo greetd per l'autologin fulmineo in Hyprland
