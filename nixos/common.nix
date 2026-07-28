@@ -140,7 +140,7 @@ fonts = {
     networkmanagerapplet      # Gestore visivo per Rete
     ags                       # Per vari widget etc...
     hyprlock                  # Per interfaccia di login
-
+    hypridle                  # Per andare in standby
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
