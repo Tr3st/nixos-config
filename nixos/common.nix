@@ -3,15 +3,9 @@
 # (Tutto ciò che c'è qui si applicherà magicamente a tutti i PC)
 # ==============================================================================
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [
-    inputs.silentSDDM.nixosModules.default
-  ];
-
-
-
   # ==========================================
   #   LOCALIZZAZIONE E LINGUA
   # ==========================================

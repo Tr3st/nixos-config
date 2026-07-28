@@ -10,18 +10,25 @@
    };
   };
 
-  outputs = { self, nixpkgs, ... }: {
+  outputs = { self, nixpkgs, silentSDDM, ... }@inputs: {
     nixosConfigurations = {
+
       # Profilo per il PC Fisso
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./desktop/configuration.nix ];
+        modules = [
+            ./desktop/configuration.nix 
+            silentSDDM.nixosModules.default # <-- Carichiamo il tema qui
+        ];
       };
 
       # NUOVO Profilo per il Portatile 
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./laptop/configuration.nix ];
+        modules = [ 
+        ./laptop/configuration.nix 
+        silentSDDM.nixosModules.default # <-- Carichiamo il tema qui
+        ];
       };
     };
   };
