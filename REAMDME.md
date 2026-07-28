@@ -14,3 +14,6 @@ ln ~/.dotfiles/ags/config.js ~/.config/ags/app.js
 
 #LAZYVIM
 ln -sf ~/.dotfiles/themes/current/lazyvim.lua ~/.config/nvim/lua/plugins/theme.lua
+
+#HYPRLOCK
+ln -sf ~/.dotfiles/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf

@@ -31,7 +31,10 @@
   };
   console.keyMap = "it2";
 
-fonts = {
+  # ==========================================
+  #   ASPETTO E FONT
+  # ==========================================
+  fonts = {
     fontconfig = {
       enable = true;
       defaultFonts = {
@@ -72,30 +75,38 @@ fonts = {
     pulse.enable = true;
   };
 
+  # ==========================================
+  #   GESTIONE LOGIN E AMBIENTE GRAFICO
+  # ==========================================
+  # Spegniamo definitivamente l'ambiente GNOME e il suo Display Manager (GDM)
+  services.xserver.desktopManager.gnome.enable = false;
+  services.xserver.displayManager.gdm.enable = false;
+  
+  # Disattiviamo l'autologin testuale
+  services.greetd.enable = false;
 
-  # ==========================================
-  #   AMBIENTI DESKTOP E SHELL
-  # ==========================================
+  # Accendiamo SDDM in modalità Wayland con motore grafico moderno (Qt6)
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    package = pkgs.kdePackages.sddm; # ← Fondamentale per i temi nuovi
+    theme = "silent";
+  };
+
   # Hyprland (Wayland Tiling Window Manager principale)
   programs.hyprland.enable = true;
 
-  # Spegniamo il blindato GDM
-  services.xserver.displayManager.gdm.enable = false;
-
-  # Accendiamo il flessibile SDDM
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-
-  # GNOME (Interfaccia classica / Piano di riserva)
-  services.xserver.enable = true;
-  #services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  environment.gnome.excludePackages = with pkgs; [ gnome-console gnome-terminal ];
-
-  # Shell e Terminal Multiplexer
+  # ==========================================
+  #   SHELL, TERMINALE E ALIAS
+  # ==========================================
   programs.zsh.enable = true;
   programs.tmux.enable = true;
 
+  environment.shellAliases = {
+    # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
+    carica = "(cd ~/.dotfiles && git add . ; git commit -m 'Salvataggio automatico' ; git push)";
+    scarica = "(cd ~/.dotfiles && git pull)";
+  };
 
   # ==========================================
   #   SVILUPPO E GESTIONE SISTEMA
@@ -116,19 +127,17 @@ fonts = {
     options = "--delete-older-than 7d";
   };
 
-# --- SCORCIATOIE DA TERMINALE (ALIAS) ---
-  environment.shellAliases = {
-    # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
-    carica = "(cd ~/.dotfiles && git add . ; git commit -m 'Salvataggio automatico' ; git push)";
-    scarica = "(cd ~/.dotfiles && git pull)";
-    
-  };
-
   # ==========================================
   #   PACCHETTI SOFTWARE GLOBALI
   # ==========================================
   environment.systemPackages = with pkgs; [
     
+    # --- DIPENDENZE PER IL TEMA SDDM SILENT ---
+    (callPackage ./sddm-theme.nix { }) # Decommenta questa riga dopo aver creato il file separato
+    kdePackages.qtsvg
+    kdePackages.qtmultimedia
+    kdePackages.qtvirtualkeyboard
+
     # --- INTERNET E COMUNICAZIONE ---
     google-chrome             # Browser web
     discord                   # Chat e chiamate vocali
@@ -138,15 +147,14 @@ fonts = {
     kitty                     # Emulatore di terminale super veloce
     wl-clipboard              # Gestione del copia/incolla su Wayland
     awww                      # Gestione degli sfondi
-    wofi                      # Rierctore delle applicazioni
+    wofi                      # Ricercatore delle applicazioni
     tmux
     starship
     papirus-icon-theme        # Utile per le icone (es wofi)
     pavucontrol               # Gestore visivo per Audio
     networkmanagerapplet      # Gestore visivo per Rete
     ags                       # Per vari widget etc...
-    sddm-sugar-dark           # Per interfaccia di login
-
+    hyprlock                  # Per interfaccia di blocco schermo
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
@@ -166,13 +174,7 @@ fonts = {
     ripgrep                   # Motore di ricerca testo super veloce (sostituto di grep)
     fd                        # Sostituto moderno e veloce per trovare i file
     brightnessctl             # Per regolare la luminosità dello schermo
-    hyfetch                  # Per vedere informazioni sul pc
-    grim
-
-    # --- ESTENSIONI GNOME ---
-    gnomeExtensions.forge     # Aggiunge il Tiling a GNOME
-    gnome-extension-manager   # App per gestire le estensioni
+    hyfetch                   # Per vedere informazioni sul pc
+    grim                      # Per catturare screenshot
   ];
-
-  services.displayManager.sddm.theme = "sugar-dark";
 }
