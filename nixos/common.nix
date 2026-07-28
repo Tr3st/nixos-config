@@ -143,6 +143,7 @@ fonts = {
     hypridle                  # Per andare in standby
     bibata-cursors
     libnotify
+    mako
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
