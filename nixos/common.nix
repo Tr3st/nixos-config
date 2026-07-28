@@ -3,9 +3,15 @@
 # (Tutto ciò che c'è qui si applicherà magicamente a tutti i PC)
 # ==============================================================================
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.silentSDDM.nixosModules.default
+  ];
+
+
+
   # ==========================================
   #   LOCALIZZAZIONE E LINGUA
   # ==========================================
@@ -86,10 +92,9 @@
   services.greetd.enable = false;
 
   # Accendiamo SDDM in modalità Wayland con motore grafico moderno (Qt6)
-  services.displayManager.sddm = {
+  services.displayManager.sddm.wayland.enable = true; # Manteniamo Wayland
+  programs.silentSDDM = {
     enable = true;
-    wayland.enable = true;
-    package = pkgs.kdePackages.sddm; # ← Fondamentale per i temi nuovi
     theme = "silent";
   };
 
@@ -131,13 +136,6 @@
   #   PACCHETTI SOFTWARE GLOBALI
   # ==========================================
   environment.systemPackages = with pkgs; [
-    
-    # --- DIPENDENZE PER IL TEMA SDDM SILENT ---
-    (callPackage ./sddm-theme.nix { }) # Decommenta questa riga dopo aver creato il file separato
-    kdePackages.qtsvg
-    kdePackages.qtmultimedia
-    kdePackages.qtvirtualkeyboard
-
     # --- INTERNET E COMUNICAZIONE ---
     google-chrome             # Browser web
     discord                   # Chat e chiamate vocali
