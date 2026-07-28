@@ -1,0 +1,11 @@
+{
+  "wallpaper": "~/.dotfiles/themes/gruvbox-dark/wallpapers/223.jpg",
+  "colors": {
+    "bg": "#282828",
+    "surface": "#1d2021",
+    "primary": "#d79921",
+    "tertiary": "#d65d0e",
+    "inactive": "#3c3836",
+    "text": "#ebdbb2"
+  }
+}

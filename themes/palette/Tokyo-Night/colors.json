@@ -1,0 +1,13 @@
+{
+  "name": "tokyo-night",
+  "colors": {
+    "bg": "#1a1b26",
+    "bg_dark": "#16161e",
+    "surface": "#24283b",
+    "primary": "#7aa2f7",
+    "secondary": "#bb9af7",
+    "tertiary": "#7dcfff",
+    "text": "#c0caf5",
+    "inactive": "#565f89"
+  }
+}
