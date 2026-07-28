@@ -89,7 +89,7 @@
   services.displayManager.sddm.wayland.enable = true; # Manteniamo Wayland
   programs.silentSDDM = {
     enable = true;
-    theme = "silent";
+    theme = "gruvbox";
   };
 
   # Hyprland (Wayland Tiling Window Manager principale)
