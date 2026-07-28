@@ -86,18 +86,20 @@
   services.greetd.enable = false;
 
   # Accendiamo SDDM in modalità Wayland con motore grafico moderno (Qt6)
-services.displayManager.sddm = {
+  services.displayManager.sddm = {
     wayland.enable = true;
     settings = {
       Theme = {
         CursorTheme = "Adwaita";
       };
-      General = {
-        # Ingrandisce l'intera schermata di login del 150% (Metti 2 per il 200%)
-        GreeterEnvironment = "QT_SCALE_FACTOR=1.5"; 
-      };
     };
   };
+
+  # Iniezione sicura dello zoom (non va in conflitto con il Flake di GitHub)
+  systemd.services.display-manager.environment = {
+    QT_SCALE_FACTOR = "1.5";
+  };
+
   programs.silentSDDM = {
     enable = true;
     theme = "default";
