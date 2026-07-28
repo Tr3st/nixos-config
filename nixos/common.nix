@@ -141,6 +141,7 @@ fonts = {
     ags                       # Per vari widget etc...
     hyprlock                  # Per interfaccia di login
     hypridle                  # Per andare in standby
+    bibata-cursors
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
