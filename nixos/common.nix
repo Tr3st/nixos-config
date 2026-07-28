@@ -160,7 +160,7 @@
     networkmanagerapplet      # Gestore visivo per Rete
     ags                       # Per vari widget etc...
     hyprlock                  # Per interfaccia di blocco schermo
-
+    waybar 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
     git                       # Controllo di versione per il codice
