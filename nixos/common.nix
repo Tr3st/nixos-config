@@ -31,10 +31,7 @@
   };
   console.keyMap = "it2";
 
-  # ==========================================
-  #   ASPETTO E FONT
-  # ==========================================
-  fonts = {
+fonts = {
     fontconfig = {
       enable = true;
       defaultFonts = {
@@ -75,50 +72,24 @@
     pulse.enable = true;
   };
 
+
   # ==========================================
-  #   GESTIONE LOGIN E AMBIENTE GRAFICO
+  #   GESTIONE LOGIN / BLOCCO SCHERMO E SHELL
   # ==========================================
-  # Spegniamo definitivamente l'ambiente GNOME e il suo Display Manager (GDM)
-  services.xserver.desktopManager.gnome.enable = false;
-  services.xserver.displayManager.gdm.enable = false;
-  
-  # Disattiviamo l'autologin testuale
-  services.greetd.enable = false;
-
-  # Accendiamo SDDM in modalità Wayland con motore grafico moderno (Qt6)
-  services.displayManager.sddm = {
-    wayland.enable = true;
-    settings = {
-      Theme = {
-        CursorTheme = "Adwaita";
-      };
-    };
-  };
-
-  # Iniezione sicura dello zoom (non va in conflitto con il Flake di GitHub)
-  systemd.services.display-manager.environment = {
-    QT_SCALE_FACTOR = "1.5";
-  };
-
-  programs.silentSDDM = {
-    enable = true;
-    theme = "default";
-  };
-
   # Hyprland (Wayland Tiling Window Manager principale)
   programs.hyprland.enable = true;
 
-  # ==========================================
-  #   SHELL, TERMINALE E ALIAS
-  # ==========================================
+  # Spegniamo il GDM e SDDM
+  services.displayManager.sddm.enable = false;
+
+  services.xserver.desktopManager.gnome.enable = false;
+  services.xserver.displayManager.gdm.enable = false;
+
+
+  # Shell e Terminal Multiplexer
   programs.zsh.enable = true;
   programs.tmux.enable = true;
 
-  environment.shellAliases = {
-    # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
-    carica = "(cd ~/.dotfiles && git add . ; git commit -m 'Salvataggio automatico' ; git push)";
-    scarica = "(cd ~/.dotfiles && git pull)";
-  };
 
   # ==========================================
   #   SVILUPPO E GESTIONE SISTEMA
@@ -139,10 +110,19 @@
     options = "--delete-older-than 7d";
   };
 
+# --- SCORCIATOIE DA TERMINALE (ALIAS) ---
+  environment.shellAliases = {
+    # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)
+    carica = "(cd ~/.dotfiles && git add . ; git commit -m 'Salvataggio automatico' ; git push)";
+    scarica = "(cd ~/.dotfiles && git pull)";
+    
+  };
+
   # ==========================================
   #   PACCHETTI SOFTWARE GLOBALI
   # ==========================================
   environment.systemPackages = with pkgs; [
+    
     # --- INTERNET E COMUNICAZIONE ---
     google-chrome             # Browser web
     discord                   # Chat e chiamate vocali
@@ -152,15 +132,16 @@
     kitty                     # Emulatore di terminale super veloce
     wl-clipboard              # Gestione del copia/incolla su Wayland
     awww                      # Gestione degli sfondi
-    wofi                      # Ricercatore delle applicazioni
+    wofi                      # Rierctore delle applicazioni
     tmux
     starship
     papirus-icon-theme        # Utile per le icone (es wofi)
     pavucontrol               # Gestore visivo per Audio
     networkmanagerapplet      # Gestore visivo per Rete
     ags                       # Per vari widget etc...
-    hyprlock                  # Per interfaccia di blocco schermo
-    waybar 
+    hyprlock                  # Per interfaccia di login
+
+
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
     git                       # Controllo di versione per il codice
@@ -179,7 +160,20 @@
     ripgrep                   # Motore di ricerca testo super veloce (sostituto di grep)
     fd                        # Sostituto moderno e veloce per trovare i file
     brightnessctl             # Per regolare la luminosità dello schermo
-    hyfetch                   # Per vedere informazioni sul pc
-    grim                      # Per catturare screenshot
+    hyfetch                  # Per vedere informazioni sul pc
+    grim
   ];
+
+# Configuriamo greetd per l'autologin fulmineo in Hyprland
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        # Sostituisci "elias" con il tuo nome utente esatto se diverso!
+        user = "elias";
+        command = "start-hyprland";
+      };
+    };
+  };
+
 }
