@@ -142,6 +142,7 @@ fonts = {
     hyprlock                  # Per interfaccia di login
     hypridle                  # Per andare in standby
     bibata-cursors
+    libnotify
 
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
