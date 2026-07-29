@@ -1,22 +1,22 @@
 # ==========================================
-# WOFI - CONFIGURAZIONE PRO
+# WOFI - CONFIGURAZIONE PRO (CAELESTIA)
 # ==========================================
 
 # -- Aspetto Generale --
 show=drun
 prompt=Cerca applicazione...
 width=400
-height=350
+height=300
 location=center
 
-# -- Comportamento e Ricerca (Il tocco da Pro) --
-insensitive=true        # Ignora le maiuscole/minuscole ("fire" troverà "Firefox")
+# -- Comportamento e Ricerca --
+insensitive=true        # Ignora le maiuscole/minuscole
 allow_images=true       # Abilita le icone GTK
-image_size=30           # Grandezza icone bilanciata
-hide_scroll=true        # Uccide la barra di scorrimento laterale (esteticamente orribile)
-no_actions=true         # Rimuove le doppie opzioni inutili per alcune app
+image_size=32           # Icone leggermente più grandi (da 30 a 32 per allineamento a griglia)
+hide_scroll=true        # Barra laterale nascosta per massima pulizia
+no_actions=true         # Rimuove doppioni inutili
 
 # -- Integrazione Sistema --
-term=kitty              # Dice a Wofi di usare Kitty se deve lanciare app da terminale
+term=kitty              
 always_parse_args=true
 allow_markup=true

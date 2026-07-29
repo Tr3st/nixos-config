@@ -109,7 +109,7 @@ fonts = {
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
-
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
 # --- SCORCIATOIE DA TERMINALE (ALIAS) ---
   environment.shellAliases = {
     # Salva tutto su GitHub in un colpo solo (Add + Commit + Push)

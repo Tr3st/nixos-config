@@ -1,0 +1,16 @@
+[config]
+wallpaper_directory = "~/.dotfiles/themes/palette/current/wallpapers/"
+
+[templates.kitty]
+input_path = "~/.dotfiles/themes/templates/kitty.conf"
+output_path = "~/.dotfiles/themes/palette/current/kitty.conf"
+post_hook = "pkill -USR1 kitty"
+
+[templates.hyprland]
+input_path = "~/.dotfiles/themes/templates/hyprland.conf"
+output_path = "~/.dotfiles/themes/palette/current/hyprland.conf"
+post_hook = "hyprctl reload"
+
+[templates.wofi]
+input_path = "~/.dotfiles/themes/templates/wofi.css"
+output_path = "~/.dotfiles/themes/palette/current/wofi.css"
