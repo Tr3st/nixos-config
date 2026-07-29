@@ -1,5 +1,6 @@
 {
   "name": "gruvbox-dark",
+  "nvim_colorscheme": "gruvbox",
   "colors": {
     "bg": "#282828",
     "bg_dim": "#1d2021",

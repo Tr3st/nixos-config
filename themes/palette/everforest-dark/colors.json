@@ -1,0 +1,22 @@
+{
+  "name": "everforest-dark",
+  "nvim_colorscheme": "everforest"
+  "colors": {
+    "bg": "#2d353b",
+    "bg_dim": "#232a2e",
+    "bg0": "#343f44",
+    "bg1": "#3d484d",
+    "bg2": "#475258",
+    "fg": "#d3c6aa",
+    "fg_dim": "#9da9a0",
+    "primary": "#dbbc7f",
+    "secondary": "#d9bb80",
+    "tertiary": "#e69875",
+    "accent": "#a7c080",
+    "purple": "#d699b6",
+    "blue": "#7fbbb3",
+    "cyan": "#83c092",
+    "red": "#e67e80",
+    "inactive": "#4f5b58"
+  }
+}

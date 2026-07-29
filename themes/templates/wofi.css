@@ -1,10 +1,10 @@
 /* =========================================================
-   WOFI - GRUVBOX DARK (GLASSMORFISM & ANIMATIONS)
+   TEMPLATE: WOFI DYNAMIC STYLING
    ========================================================= */
 
 * {
     font-family: 'JetBrains Mono', 'Fira Code', 'Roboto', sans-serif;
-    color: #ebdbb2;
+    color: {{fg}};
     box-shadow: none;
 }
 
@@ -15,9 +15,8 @@ window {
 
 #outer-box {
     margin: 5px;
-    /* Colore Gruvbox di sfondo (#282828) con 85% di opacità per il blur */
-    background-color: rgba(40, 40, 40, 0.85); 
-    border: 2px solid rgba(215, 153, 33, 0.5); /* Bordo giallo semi-trasparente */
+    background-color: {{bg}}; 
+    border: 2px solid {{primary}};
     border-radius: 16px;
 }
 
@@ -29,18 +28,18 @@ window {
 #input {
     margin-bottom: 20px;
     padding: 12px 16px;
-    background-color: rgba(60, 56, 54, 0.6); /* #3c3836 trasparente */
+    background-color: {{bg0}};
     border: 1px solid transparent;
     border-radius: 16px;
     font-size: 16px;
     font-weight: 500;
-    color: #ebdbb2;
-    transition: all 0.3s ease; /* Transizione morbida */
+    color: {{fg}};
+    transition: all 0.3s ease;
 }
 
 #input:focus {
-    border: 1px solid #d79921;
-    background-color: rgba(60, 56, 54, 0.9);
+    border: 1px solid {{primary}};
+    background-color: {{bg1}};
     outline: none;
 }
 
@@ -55,12 +54,11 @@ window {
     border-radius: 8px;
     background-color: transparent;
     border: 1px solid transparent;
-    transition: all 0.2s ease-in-out; /* Animazione all'hover */
+    transition: all 0.2s ease-in-out;
 }
 
-/* Effetto scorrimento sopra gli elementi non selezionati */
 #entry:hover {
-    background-color: rgba(214, 93, 14, 0.2); /* Sfumatura arancione leggerissima */
+    background-color: {{bg2}};
 }
 
 #img {
@@ -69,17 +67,17 @@ window {
 
 #text {
     font-size: 15px;
-    color: #a89984;
+    color: {{fg_dim}};
     font-weight: 400;
     transition: color 0.2s ease;
 }
 
 #entry:selected {
-    background-color: #3c3836;
-    border: 1px solid #d79921;
+    background-color: {{bg0}};
+    border: 1px solid {{primary}};
 }
 
 #entry:selected #text {
-    color: #ebdbb2;
+    color: {{fg}};
     font-weight: 700;
 }

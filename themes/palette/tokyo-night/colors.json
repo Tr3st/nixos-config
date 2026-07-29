@@ -1,0 +1,21 @@
+{
+  "name": "tokyo-night",
+  "nvim_colorscheme": "tokyonight",
+  "colors": {
+    "bg": "#1a1b26",
+    "bg_dim": "#16161e",
+    "bg0": "#24283b",
+    "bg1": "#292e42",
+    "bg2": "#3b4261",
+    "fg": "#c0caf5",
+    "fg_dim": "#a9b1d6",
+    "primary": "#7aa2f7",
+    "secondary": "#bb9af7",
+    "tertiary": "#ff9e64",
+    "accent": "#9ece6a",
+    "purple": "#bb9af7",
+    "blue": "#7aa2f7",
+    "cyan": "#7dcfff",
+    "red": "#f7768e",
+    "inactive": "#414868"
+}
