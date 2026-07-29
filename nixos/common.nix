@@ -144,7 +144,9 @@ fonts = {
     bibata-cursors
     libnotify
     mako
-
+    matugen
+        matugen
+	
     # --- PROGRAMMAZIONE E TERMINALE (Strumenti base) ---
     neovim                    # Editor di testo avanzato da terminale
     git                       # Controllo di versione per il codice

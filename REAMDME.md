@@ -19,3 +19,6 @@ ln -sf ~/.dotfiles/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf
 
 # NVIM
 ln -sfn ~/.dotfiles/nvim ~/.config/nvim
+
+# MAKO (Nofify-sender)
+ln -sfn ~/.dotfiles/themes/palette/current/mako.conf ~/.config/mako/config
