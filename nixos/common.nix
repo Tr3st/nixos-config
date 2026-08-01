@@ -168,22 +168,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     hyfetch                  # Per vedere informazioni sul pc
     grim
     tree
-
-    # Configurazione di AGS con le librerie Astal necessarie
-    (ags.override {
-      extraPackages = [
-        astal.hyprland
-        astal.mpris
-        astal.network
-        astal.wireplumber
-        astal.battery
-        astal.apps
-        astal.tray
-      ];
-    })
   ];
-
-
 
 # Configuriamo greetd per l'autologin fulmineo in Hyprland
   services.greetd = {

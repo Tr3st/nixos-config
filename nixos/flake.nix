@@ -6,6 +6,17 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; 
   };
 
+inputs.ags.packages.${pkgs.system}.default.override {
+  extraPackages = with inputs.ags.packages.${pkgs.system}; [
+    hyprland
+    mpris
+    network
+    wireplumber
+    battery
+    apps
+    tray
+  ];
+}
 
   outputs = { self, nixpkgs, ... }: {
     nixosConfigurations = {
