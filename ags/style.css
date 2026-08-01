@@ -1,0 +1,55 @@
+/* =========================================================
+   AGS MAIN STYLESHEET
+   ========================================================= */
+
+/* Importa SOLO il file dei colori generato da Matugen */
+@import url("~/.dotfiles/themes/palette/matugen/ags.css");
+
+/* Reset di base e Finestra Principale */
+window.main-bar {
+    background-color: transparent;
+}
+
+/* Contenitore generale della barra */
+.bar-container {
+    background-color: alpha(@surface, 0.75);
+    border-bottom: 1px solid alpha(@outline, 0.2);
+    padding: 4px 12px;
+}
+
+/* Moduli Generici (Clock, Volume, Meteo, Power, ecc.) */
+.module-box {
+    background-color: alpha(@surface_container_highest, 0.45);
+    color: @on_surface;
+    border-radius: 12px;
+    padding: 4px 10px;
+    margin: 0px 3px;
+    border: 1px solid alpha(@outline_variant, 0.25);
+    transition: all 0.2s ease-in-out;
+}
+
+.module-box:hover {
+    background-color: alpha(@primary_container, 0.5);
+    border-color: alpha(@primary, 0.5);
+}
+
+/* Pulsante Logo NixOS */
+.nix-logo {
+    color: @primary;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Dynamic Island al centro */
+.dynamic-island {
+    background-color: alpha(@surface_container_highest, 0.85);
+    color: @on_surface;
+    border: 1px solid alpha(@primary, 0.4);
+    border-radius: 16px;
+    padding: 4px 16px;
+    transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+}
+
+.dynamic-island:hover {
+    background-color: alpha(@primary_container, 0.7);
+}

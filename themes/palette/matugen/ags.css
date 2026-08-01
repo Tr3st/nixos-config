@@ -1,0 +1,20 @@
+/* =========================================================
+   TEMPLATE: MATUGEN DYNAMIC COLOR VARIABLES
+   ========================================================= */
+
+@define-color surface #17130b;
+@define-color on_surface #ebe1d4;
+@define-color surface_container #231f17;
+@define-color surface_container_highest #39342b;
+
+@define-color primary #e9c16c;
+@define-color on_primary #3f2e00;
+@define-color primary_container #5b4300;
+
+@define-color secondary #d8c4a0;
+@define-color tertiary #b0cfaa;
+
+@define-color outline #998f80;
+@define-color outline_variant #4d4639;
+
+@define-color error #ffb4ab;

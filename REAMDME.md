@@ -6,7 +6,8 @@ ln -sf ~/.dotfiles/themes/palette/current/wofi.css ~/.config/wofi/style.css
 ln -sf ~/.dotfiles/themes/palette/current/kitty.conf ~/.config/kitty/kitty.conf 
 
 # LAZYVIM
-ln -sf ~/.dotfiles/themes/palette/current/lazyvim.lua ~/.config/nvim/lua/plugins/theme.lua
+ln -sfn ~/.dotfiles/nvim ~/.config/nvim
+ln -sf ~/.dotfiles/themes/palette/current/lazyvim.lua ~/.config/nvim/lua/matugen_palette.lua
 
 # HYPRLAND
 # Laptop ot Desktop

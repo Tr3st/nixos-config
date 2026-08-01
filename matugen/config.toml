@@ -14,3 +14,17 @@ post_hook = "hyprctl reload"
 [templates.wofi]
 input_path = "~/.dotfiles/themes/templates/wofi.css"
 output_path = "~/.dotfiles/themes/palette/current/wofi.css"
+
+[templates.lazyvim]
+input_path = "~/.dotfiles/themes/templates/lazyvim.lua"
+output_path = "~/.dotfiles/themes/palette/current/lazyvim.lua"
+
+
+[templates.hyprlock]
+input_path = "~/.dotfiles/themes/templates/hyprlock.conf"
+output_path = "~/.dotfiles/themes/palette/current/hyprlock.conf"
+
+[templates.ags_style]
+input_path = "~/.dotfiles/themes/templates/ags.css"
+output_path = "~/.dotfiles/themes/palette/matugen/ags.css"
+
