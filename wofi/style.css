@@ -1,0 +1,78 @@
+/* ~/.dotfiles/wofi/style.css — statico, non toccato da matugen.
+   ATTENZIONE: sostituisci "TUOUTENTE" col tuo nome utente reale:
+   GTK-CSS non espande la ~, serve un percorso assoluto. */
+@import url("~/.dotfiles/themes/palette/matugen/wofi.css");
+
+* {
+    font-family: "Rubik", "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+window {
+    background-color: transparent;
+}
+
+#outer-box {
+    background-color: @surface;
+    border: 1px solid @outline;
+    border-radius: 20px;
+    padding: 14px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+#input {
+    background-color: @surface_container;
+    color: @on_surface;
+    border: 1px solid @outline;
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    caret-color: @primary;
+    transition: border-color 150ms ease-in-out, background-color 150ms ease-in-out;
+}
+
+#input:focus {
+    border-color: @primary;
+}
+
+#scroll {
+    margin-top: 4px;
+}
+
+#inner-box {
+    background-color: transparent;
+}
+
+#entry {
+    padding: 8px 10px;
+    border-radius: 12px;
+    color: @on_surface_variant;
+    transition: background-color 120ms ease-in-out, color 120ms ease-in-out;
+}
+
+#entry:hover {
+    background-color: alpha(@primary, 0.12);
+}
+
+#entry:selected {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#entry image {
+    margin-right: 10px;
+    -gtk-icon-transform: scale(1);
+    transition: -gtk-icon-transform 120ms ease-in-out;
+}
+
+#entry:selected image {
+    -gtk-icon-transform: scale(1.08);
+}
+
+#text {
+    color: inherit;
+}
+
+#text:selected {
+    color: inherit;
+}

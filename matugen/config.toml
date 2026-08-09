@@ -1,5 +1,5 @@
 [config]
-wallpaper_directory = "~/.dotfiles/themes/palette/current/wallpapers/"
+wallpaper_directory = "~/.dotfiles/themes/palette/matugen/wallpapers/"
 
 [templates.kitty]
 input_path = "~/.dotfiles/themes/templates/kitty.conf"

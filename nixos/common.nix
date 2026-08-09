@@ -168,7 +168,8 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     hyfetch                  # Per vedere informazioni sul pc
     grim
     tree
-
+    
+    pkgs.wineWoW64
     # Configurazione di AGS con le librerie Astal necessarie
     (ags.override {
       extraPackages = [

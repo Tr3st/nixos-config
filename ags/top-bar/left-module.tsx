@@ -1,24 +1,15 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
-import Hyprland from "gi://AstalHyprland"
 import { Variable, GLib } from "astal"
 
-// Clock variable (Data e Ora)
 const time = Variable("").poll(1000, () => 
     GLib.DateTime.new_now_local().format("%a %d %b | %H:%M")!
 )
 
 export function LeftModules() {
-    const hypr = Hyprland.get_default()
-
-    return <box className="left-modules" spacing={8}>
+    return <box spacing={4} valign={Gtk.Align.CENTER}>
+        
         {/* Logo NixOS */}
-        <button 
-            className="module-box nix-logo"
-            onClicked={() => {
-                // In seguito collegheremo l'apertura del launcher completo
-                print("Apri Menu / Launcher")
-            }}
-        >
+        <button className="module-box nix-logo" onClicked={() => print("Launcher")}>
             <label label=" " />
         </button>
 
@@ -27,9 +18,15 @@ export function LeftModules() {
             <label label={time()} />
         </box>
 
-        {/* Workspaces Hyprland */}
-        <box className="module-box workspaces" spacing={4}>
-            {/* Generati dinamicamente da Hyprland */}
+        {/* Workspaces FINTI per testare il Notch */}
+        <box className="module-box workspaces" valign={Gtk.Align.CENTER}>
+            <box spacing={6} valign={Gtk.Align.CENTER}>
+                <button className="workspace-btn active" />
+                <button className="workspace-btn" />
+                <button className="workspace-btn" />
+                <button className="workspace-btn" />
+            </box>
         </box>
+        
     </box>
 }

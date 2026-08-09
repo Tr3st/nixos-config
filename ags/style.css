@@ -1,55 +1,202 @@
 /* =========================================================
-   AGS MAIN STYLESHEET
+   STYLE: CAELESTIA NOTCH & DYNAMIC ISLAND PRO
    ========================================================= */
 
-/* Importa SOLO il file dei colori generato da Matugen */
-@import url("~/.dotfiles/themes/palette/matugen/ags.css");
+@import url("/home/elias/.dotfiles/themes/palette/matugen/ags.css");
 
-/* Reset di base e Finestra Principale */
+
+/* Definiamo il colore del notch una volta sola per evitare differenze tra ombre e sfondi */
+@define-color notch_bg alpha(@surface_container_highest, 0.95);
+
 window.main-bar {
     background-color: transparent;
 }
 
-/* Contenitore generale della barra */
 .bar-container {
-    background-color: alpha(@surface, 0.75);
-    border-bottom: 1px solid alpha(@outline, 0.2);
-    padding: 4px 12px;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
 }
 
-/* Moduli Generici (Clock, Volume, Meteo, Power, ecc.) */
-.module-box {
-    background-color: alpha(@surface_container_highest, 0.45);
-    color: @on_surface;
-    border-radius: 12px;
+
+window.main-bar {
+    background-color: transparent;
+}
+
+.bar-container {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+/* -----------------------------------------------------
+   LA STRUTTURA DEL NOTCH
+   ----------------------------------------------------- */
+
+.notch-content {
+    background-color: @notch_bg;
+    border-radius: 0px 0px 16px 16px; 
     padding: 4px 10px;
-    margin: 0px 3px;
-    border: 1px solid alpha(@outline_variant, 0.25);
-    transition: all 0.2s ease-in-out;
+}
+
+/* GLI ANGOLI INVERSI FLUIDI */
+.corner {
+    min-width: 16px;
+    min-height: 16px;
+    background-color: transparent;
+}
+
+.corner.left {
+    border-top-right-radius: 16px;
+    /* L'ombra riempie esattamente i 16px dell'angolo */
+    box-shadow: 8px -8px 0 0 @notch_bg;
+}
+
+.corner.right {
+    border-top-left-radius: 16px;
+    box-shadow: -8px -8px 0 0 @notch_bg;
+}
+
+/* -----------------------------------------------------
+   MODULI E PULSANTI
+   ----------------------------------------------------- */
+
+.module-box {
+    background-color: transparent;
+    color: @on_surface;
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin: 0px 2px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
 .module-box:hover {
-    background-color: alpha(@primary_container, 0.5);
-    border-color: alpha(@primary, 0.5);
+    background-color: alpha(@primary_container, 0.7);
+    color: @on_primary_container;
 }
 
-/* Pulsante Logo NixOS */
+/* -----------------------------------------------------
+   WORKSPACES DINAMICI
+   ----------------------------------------------------- */
+
+.workspaces {
+    padding: 2px 8px;
+}
+
+.workspace-btn {
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 50%; /* Pallino */
+    background-color: alpha(@on_surface, 0.3);
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.workspace-btn.active {
+    background-color: @primary;
+    min-width: 28px; /* Si allunga quando è attivo */
+    border-radius: 12px;
+}
+
+.workspace-btn:hover {
+    background-color: alpha(@primary, 0.7);
+}
+
+/* -----------------------------------------------------
+   ALTRI COMPONENTI
+   ----------------------------------------------------- */
+
+.dynamic-island {
+    color: @on_surface;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 2px 16px;
+}
+
 .nix-logo {
     color: @primary;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 900;
 }
 
-/* Dynamic Island al centro */
-.dynamic-island {
-    background-color: alpha(@surface_container_highest, 0.85);
+button {
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+/* -----------------------------------------------------
+   MODULI E PULSANTI
+   ----------------------------------------------------- */
+
+.module-box {
+    background-color: transparent;
     color: @on_surface;
-    border: 1px solid alpha(@primary, 0.4);
-    border-radius: 16px;
-    padding: 4px 16px;
-    transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin: 0px 2px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
-.dynamic-island:hover {
+.module-box:hover {
     background-color: alpha(@primary_container, 0.7);
+    color: @on_primary_container;
+}
+
+/* -----------------------------------------------------
+   WORKSPACES DINAMICI
+   ----------------------------------------------------- */
+
+.workspaces {
+    padding: 2px 8px;
+}
+
+.workspace-btn {
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 50%; /* Pallino */
+    background-color: alpha(@on_surface, 0.3);
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.workspace-btn.active {
+    background-color: @primary;
+    min-width: 28px; /* Si allunga quando è attivo */
+    border-radius: 12px;
+}
+
+.workspace-btn:hover {
+    background-color: alpha(@primary, 0.7);
+}
+
+/* -----------------------------------------------------
+   ALTRI COMPONENTI
+   ----------------------------------------------------- */
+
+.dynamic-island {
+    color: @on_surface;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 2px 16px;
+}
+
+.nix-logo {
+    color: @primary;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+button {
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
 }
