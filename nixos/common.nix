@@ -169,7 +169,8 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     grim
     tree
     
-    bottles
+  wineWowPackages.stable
+  winetricks
     # Configurazione di AGS con le librerie Astal necessarie
     (ags.override {
       extraPackages = [
