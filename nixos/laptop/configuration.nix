@@ -2,7 +2,7 @@
 # CONFIGURAZIONE SPECIFICA: PORTATILE
 # ==============================================================================
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 
