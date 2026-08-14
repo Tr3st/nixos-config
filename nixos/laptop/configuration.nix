@@ -26,13 +26,9 @@
   system.stateVersion = "26.05"; # Usa la stessa che avevi nel file originale
 
   # --- CAELESTIA cli ---
-  home-manager.users.TuoUtente = {
-    # Importa il modulo nativo
-    imports = [ inputs.caelestia-shell.homeModules.default ];
-    
-    programs.caelestia = {
-      enable = true;
-      cli.enable = true; # Aggiunge l'utility caelestia-cli al PATH
-    };
-  };
+
+  environment.systemPackages = with pkgs; [
+    inputs.caelestia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default
+  ];
+
 }
